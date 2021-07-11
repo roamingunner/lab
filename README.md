@@ -24,6 +24,11 @@ testing on qemu
 
 python is not installed in target, so only raw and script modules are available.
 
+## login account
+
+- root:root
+- admin:admin
+
 ## step
 
 - sudo ./run.sh # start qemu
@@ -47,9 +52,8 @@ Shared connection to 192.168.100.10 closed.
 }
 ```
 
-## login account
+**but** ansible-playbook doesn't work because of lacking python and python module 
 
-- root:root
-- admin:admin
+## TODO
 
-
+- build rootfs with python and python-zlib module to test ansible-playbook
