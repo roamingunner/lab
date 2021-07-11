@@ -1,0 +1,21 @@
+---
+
+- name: test ansible on qemu arm
+  hosts: n1
+  tasks:
+    - name: debug module
+      debug:
+        msg: "hello debug module"
+    - name: raw module
+      raw: touch /tmp/raw_module.txt
+    - name: shell module
+      shell: touch /tmp/shell_module.txt
+    - name: script module
+      script: test_script_module.sh
+    - name: copy module
+      copy: 
+        src: file_will_be_send_to_remote.txt
+        dest: /tmp/file_will_be_send_to_remote.txt
+    - name: ping module
+      ping: 
+
