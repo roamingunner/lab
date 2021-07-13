@@ -10,19 +10,20 @@
   - Python 2 (version 2.7) or Python 3 (versions 3.5 and higher)
   - ansible `sudo apt install ansible`
 - Managed node
-  - ssh(dropbear is also worked, bust just tested script module and raw module)
+  - ssh(dropbear is also worked, but just tested script module and raw module)
   - sftp(**transfers modules** using SFTP. If that’s not available, you can switch to SCP in ansible.cfg)
   - Python 2 (version 2.6 or later) or Python 3 (version 3.5 or later)
     - if python is not available, you may see error message like this `"module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n"`
-    - **but** Ansible’s **raw module**(run command on target node), and the **script module**(copy local script to target host and run it. script will transfer to `/$HOME/.ansible/tmp/` folder) , do not depend on a client side install of Python to run.
+    - **but** Ansible’s **raw module**(run command on target node), and the **script module**(copy the local script to target host and run it. script will transfer to `/$HOME/.ansible/tmp/` folder) , do not depend on a client-side install of Python to run.
     - **ansible-playbook may also need python** . ansible-playbook always failed even if only has a raw module task
-    - python needs include zlib module
+    - python needs to include zlib module
 
 ## testing enviroments
 
 testing on qemu
 
 python is not installed in target, so only raw and script modules are available.
+
 
 ## login account
 
@@ -67,5 +68,5 @@ Ansible can't manage node with micropython . It return error with `fatal: [192.1
 
 ### summry
 
-- To managed node need to install openssh/sftp and python(least with zlib)
-- rootfs will increate 15.6MB
+- The managed node need to install OpenSSH/Sftp and python(least with zlib)
+- The rootfs will increate 15.6MB
