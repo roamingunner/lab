@@ -2,10 +2,10 @@
 
 - name: test ansible on qemu arm
   hosts: n1
+  gather_facts: no
   tasks:
-    - name: debug module
-      debug:
-        msg: "hello debug module"
+    - name: ping module
+      ping:
     - name: raw module
       raw: touch /tmp/raw_module.txt
     - name: shell module

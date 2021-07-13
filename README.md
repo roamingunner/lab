@@ -29,7 +29,9 @@ python is not installed in target, so only raw and script modules are available.
 - root:root
 - admin:admin
 
-## step
+## testing 
+
+### run with rootfs.ext2
 
 - sudo ./run.sh # start qemu
 - ifconfig eth0 192.168.100.10
@@ -54,6 +56,16 @@ Shared connection to 192.168.100.10 closed.
 
 **but** ansible-playbook doesn't work because of lacking python and python module 
 
-## TODO
+### run with rootfs_with_python3.ext2
 
-- build rootfs with python and python-zlib module to test ansible-playbook
+with python3 and python zlib module , ansible-playbook run successfully.
+
+
+### run with rootfs_with_micropython
+
+Ansible can't manage node with micropython . It return error with `fatal: [192.168.100.10]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 192.168.100.10 closed.\r\n", "module_stdout": "Traceback (most recent call last):\r\n  File \"/home/admin/.ansible/tmp/ansible-tmp-1626156477.41-225061836946296/ping.py\", line 112, in <module>\r\nAttributeError: 'module' object has no attribute 'mkdtemp'\r\n", "msg": "MODULE FAILURE", "rc": 1}`
+
+### summry
+
+- To managed node need to install openssh/sftp and python(least with zlib)
+- rootfs will increate 15.6MB
