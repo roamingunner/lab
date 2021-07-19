@@ -70,3 +70,10 @@ Ansible can't manage node with micropython . It return error with `fatal: [192.1
 
 - The managed node need to install OpenSSH/Sftp and python(least with zlib)
 - The rootfs will increate 15.6MB
+
+### more
+
+[udemy-course's ansible tutorial](https://github.com/udemy-course/ansible-cn) is a good metarials of fleshman and It also has video on youtube channel.
+
+
+
