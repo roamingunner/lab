@@ -8,6 +8,7 @@
 
 * `./run.sh`
 * login password is `root`
+* if want to share folder with host , run this command `mkdir /share && mount -t 9p hostshare /share`
 
 ## build
 
